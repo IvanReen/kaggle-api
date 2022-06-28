@@ -31,7 +31,9 @@ def main():
         '-v',
         '--version',
         action='version',
-        version='Kaggle API ' + KaggleApi.__version__)
+        version=f'Kaggle API {KaggleApi.__version__}',
+    )
+
 
     subparsers = parser.add_subparsers(
         title='commands', help=Help.kaggle, dest='command')
@@ -42,14 +44,13 @@ def main():
     parse_kernels(subparsers)
     parse_config(subparsers)
     args = parser.parse_args()
-    command_args = {}
-    command_args.update(vars(args))
+    command_args = dict(vars(args))
     del command_args['func']
     del command_args['command']
     try:
         out = args.func(**command_args)
     except ApiException as e:
-        print(str(e.status) + ' - ' + e.reason)
+        print(f'{str(e.status)} - {e.reason}')
         out = None
     except ValueError as e:
         print(e)

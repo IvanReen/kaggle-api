@@ -49,7 +49,7 @@ class KaggleApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def competition_download_leaderboard(self, id, **kwargs):  # noqa: E501
+    def competition_download_leaderboard(self, id, **kwargs):    # noqa: E501
         """Download competition leaderboard  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -67,10 +67,9 @@ class KaggleApi(object):
         if kwargs.get('async_req'):
             return self.competition_download_leaderboard_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.competition_download_leaderboard_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+            return self.competition_download_leaderboard_with_http_info(id, **kwargs)
 
-    def competition_download_leaderboard_with_http_info(self, id, **kwargs):  # noqa: E501
+    def competition_download_leaderboard_with_http_info(self, id, **kwargs):    # noqa: E501
         """Download competition leaderboard  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -85,11 +84,13 @@ class KaggleApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -107,10 +108,7 @@ class KaggleApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
 
         header_params = {}
@@ -138,7 +136,7 @@ class KaggleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def competition_view_leaderboard(self, id, **kwargs):  # noqa: E501
+    def competition_view_leaderboard(self, id, **kwargs):    # noqa: E501
         """VIew competition leaderboard  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -156,10 +154,9 @@ class KaggleApi(object):
         if kwargs.get('async_req'):
             return self.competition_view_leaderboard_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.competition_view_leaderboard_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+            return self.competition_view_leaderboard_with_http_info(id, **kwargs)
 
-    def competition_view_leaderboard_with_http_info(self, id, **kwargs):  # noqa: E501
+    def competition_view_leaderboard_with_http_info(self, id, **kwargs):    # noqa: E501
         """VIew competition leaderboard  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -174,11 +171,13 @@ class KaggleApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -196,10 +195,7 @@ class KaggleApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
 
         header_params = {}
@@ -227,7 +223,7 @@ class KaggleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def competitions_data_download_file(self, id, file_name, **kwargs):  # noqa: E501
+    def competitions_data_download_file(self, id, file_name, **kwargs):    # noqa: E501
         """Download competition data file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -246,10 +242,11 @@ class KaggleApi(object):
         if kwargs.get('async_req'):
             return self.competitions_data_download_file_with_http_info(id, file_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.competitions_data_download_file_with_http_info(id, file_name, **kwargs)  # noqa: E501
-            return data
+            return self.competitions_data_download_file_with_http_info(
+                id, file_name, **kwargs
+            )
 
-    def competitions_data_download_file_with_http_info(self, id, file_name, **kwargs):  # noqa: E501
+    def competitions_data_download_file_with_http_info(self, id, file_name, **kwargs):    # noqa: E501
         """Download competition data file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -265,11 +262,14 @@ class KaggleApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'file_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'file_name',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -294,8 +294,7 @@ class KaggleApi(object):
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']  # noqa: E501
-        if 'file_name' in params:
-            path_params['fileName'] = params['file_name']  # noqa: E501
+        path_params['fileName'] = params['file_name']  # noqa: E501
 
         query_params = []
 
@@ -324,7 +323,7 @@ class KaggleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def competitions_data_list_files(self, id, **kwargs):  # noqa: E501
+    def competitions_data_list_files(self, id, **kwargs):    # noqa: E501
         """List competition data files  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -342,10 +341,9 @@ class KaggleApi(object):
         if kwargs.get('async_req'):
             return self.competitions_data_list_files_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.competitions_data_list_files_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+            return self.competitions_data_list_files_with_http_info(id, **kwargs)
 
-    def competitions_data_list_files_with_http_info(self, id, **kwargs):  # noqa: E501
+    def competitions_data_list_files_with_http_info(self, id, **kwargs):    # noqa: E501
         """List competition data files  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -360,11 +358,13 @@ class KaggleApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -382,21 +382,16 @@ class KaggleApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -417,7 +412,7 @@ class KaggleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def competitions_list(self, **kwargs):  # noqa: E501
+    def competitions_list(self, **kwargs):    # noqa: E501
         """List competitions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -439,10 +434,9 @@ class KaggleApi(object):
         if kwargs.get('async_req'):
             return self.competitions_list_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.competitions_list_with_http_info(**kwargs)  # noqa: E501
-            return data
+            return self.competitions_list_with_http_info(**kwargs)
 
-    def competitions_list_with_http_info(self, **kwargs):  # noqa: E501
+    def competitions_list_with_http_info(self, **kwargs):    # noqa: E501
         """List competitions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -461,11 +455,17 @@ class KaggleApi(object):
                  returns the request thread.
         """
 
-        all_params = ['group', 'category', 'sort_by', 'page', 'search']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'group',
+            'category',
+            'sort_by',
+            'page',
+            'search',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -493,15 +493,13 @@ class KaggleApi(object):
         if 'search' in params:
             query_params.append(('search', params['search']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -522,7 +520,7 @@ class KaggleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def competitions_submissions_list(self, id, **kwargs):  # noqa: E501
+    def competitions_submissions_list(self, id, **kwargs):    # noqa: E501
         """List competition submissions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -541,10 +539,9 @@ class KaggleApi(object):
         if kwargs.get('async_req'):
             return self.competitions_submissions_list_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.competitions_submissions_list_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+            return self.competitions_submissions_list_with_http_info(id, **kwargs)
 
-    def competitions_submissions_list_with_http_info(self, id, **kwargs):  # noqa: E501
+    def competitions_submissions_list_with_http_info(self, id, **kwargs):    # noqa: E501
         """List competition submissions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -560,11 +557,14 @@ class KaggleApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'page']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'page',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -582,23 +582,18 @@ class KaggleApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -619,7 +614,7 @@ class KaggleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def competitions_submissions_submit(self, blob_file_tokens, submission_description, id, **kwargs):  # noqa: E501
+    def competitions_submissions_submit(self, blob_file_tokens, submission_description, id, **kwargs):    # noqa: E501
         """Submit to competition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -639,10 +634,11 @@ class KaggleApi(object):
         if kwargs.get('async_req'):
             return self.competitions_submissions_submit_with_http_info(blob_file_tokens, submission_description, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.competitions_submissions_submit_with_http_info(blob_file_tokens, submission_description, id, **kwargs)  # noqa: E501
-            return data
+            return self.competitions_submissions_submit_with_http_info(
+                blob_file_tokens, submission_description, id, **kwargs
+            )
 
-    def competitions_submissions_submit_with_http_info(self, blob_file_tokens, submission_description, id, **kwargs):  # noqa: E501
+    def competitions_submissions_submit_with_http_info(self, blob_file_tokens, submission_description, id, **kwargs):    # noqa: E501
         """Submit to competition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -659,11 +655,15 @@ class KaggleApi(object):
                  returns the request thread.
         """
 
-        all_params = ['blob_file_tokens', 'submission_description', 'id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'blob_file_tokens',
+            'submission_description',
+            'id',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -689,13 +689,8 @@ class KaggleApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
@@ -705,9 +700,9 @@ class KaggleApi(object):
             form_params.append(('submissionDescription', params['submission_description']))  # noqa: E501
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -732,7 +727,7 @@ class KaggleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def competitions_submissions_upload(self, file, guid, content_length, last_modified_date_utc, **kwargs):  # noqa: E501
+    def competitions_submissions_upload(self, file, guid, content_length, last_modified_date_utc, **kwargs):    # noqa: E501
         """Upload competition submission file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -753,10 +748,11 @@ class KaggleApi(object):
         if kwargs.get('async_req'):
             return self.competitions_submissions_upload_with_http_info(file, guid, content_length, last_modified_date_utc, **kwargs)  # noqa: E501
         else:
-            (data) = self.competitions_submissions_upload_with_http_info(file, guid, content_length, last_modified_date_utc, **kwargs)  # noqa: E501
-            return data
+            return self.competitions_submissions_upload_with_http_info(
+                file, guid, content_length, last_modified_date_utc, **kwargs
+            )
 
-    def competitions_submissions_upload_with_http_info(self, file, guid, content_length, last_modified_date_utc, **kwargs):  # noqa: E501
+    def competitions_submissions_upload_with_http_info(self, file, guid, content_length, last_modified_date_utc, **kwargs):    # noqa: E501
         """Upload competition submission file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -774,11 +770,16 @@ class KaggleApi(object):
                  returns the request thread.
         """
 
-        all_params = ['file', 'guid', 'content_length', 'last_modified_date_utc']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'file',
+            'guid',
+            'content_length',
+            'last_modified_date_utc',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -818,17 +819,15 @@ class KaggleApi(object):
 
         query_params = []
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
         if 'file' in params:
             local_var_files['file'] = params['file']  # noqa: E501
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -853,7 +852,7 @@ class KaggleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def competitions_submissions_url(self, content_length, last_modified_date_utc, **kwargs):  # noqa: E501
+    def competitions_submissions_url(self, content_length, last_modified_date_utc, **kwargs):    # noqa: E501
         """Generate competition submission URL  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -873,10 +872,11 @@ class KaggleApi(object):
         if kwargs.get('async_req'):
             return self.competitions_submissions_url_with_http_info(content_length, last_modified_date_utc, **kwargs)  # noqa: E501
         else:
-            (data) = self.competitions_submissions_url_with_http_info(content_length, last_modified_date_utc, **kwargs)  # noqa: E501
-            return data
+            return self.competitions_submissions_url_with_http_info(
+                content_length, last_modified_date_utc, **kwargs
+            )
 
-    def competitions_submissions_url_with_http_info(self, content_length, last_modified_date_utc, **kwargs):  # noqa: E501
+    def competitions_submissions_url_with_http_info(self, content_length, last_modified_date_utc, **kwargs):    # noqa: E501
         """Generate competition submission URL  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -893,11 +893,15 @@ class KaggleApi(object):
                  returns the request thread.
         """
 
-        all_params = ['content_length', 'last_modified_date_utc', 'file_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'content_length',
+            'last_modified_date_utc',
+            'file_name',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -922,12 +926,9 @@ class KaggleApi(object):
         path_params = {}
         if 'content_length' in params:
             path_params['contentLength'] = params['content_length']  # noqa: E501
-        if 'last_modified_date_utc' in params:
-            path_params['lastModifiedDateUtc'] = params['last_modified_date_utc']  # noqa: E501
+        path_params['lastModifiedDateUtc'] = params['last_modified_date_utc']  # noqa: E501
 
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
@@ -935,9 +936,9 @@ class KaggleApi(object):
             form_params.append(('fileName', params['file_name']))  # noqa: E501
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -962,7 +963,7 @@ class KaggleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def datasets_create_new(self, dataset_new_request, **kwargs):  # noqa: E501
+    def datasets_create_new(self, dataset_new_request, **kwargs):    # noqa: E501
         """Create a new dataset  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -980,10 +981,9 @@ class KaggleApi(object):
         if kwargs.get('async_req'):
             return self.datasets_create_new_with_http_info(dataset_new_request, **kwargs)  # noqa: E501
         else:
-            (data) = self.datasets_create_new_with_http_info(dataset_new_request, **kwargs)  # noqa: E501
-            return data
+            return self.datasets_create_new_with_http_info(dataset_new_request, **kwargs)
 
-    def datasets_create_new_with_http_info(self, dataset_new_request, **kwargs):  # noqa: E501
+    def datasets_create_new_with_http_info(self, dataset_new_request, **kwargs):    # noqa: E501
         """Create a new dataset  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -998,11 +998,13 @@ class KaggleApi(object):
                  returns the request thread.
         """
 
-        all_params = ['dataset_new_request']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'dataset_new_request',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -1024,17 +1026,14 @@ class KaggleApi(object):
 
         query_params = []
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        if 'dataset_new_request' in params:
-            body_params = params['dataset_new_request']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params['dataset_new_request']
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -1059,7 +1058,7 @@ class KaggleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def datasets_create_version(self, owner_slug, dataset_slug, dataset_new_version_request, **kwargs):  # noqa: E501
+    def datasets_create_version(self, owner_slug, dataset_slug, dataset_new_version_request, **kwargs):    # noqa: E501
         """Create a new dataset version  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1079,8 +1078,9 @@ class KaggleApi(object):
         if kwargs.get('async_req'):
             return self.datasets_create_version_with_http_info(owner_slug, dataset_slug, dataset_new_version_request, **kwargs)  # noqa: E501
         else:
-            (data) = self.datasets_create_version_with_http_info(owner_slug, dataset_slug, dataset_new_version_request, **kwargs)  # noqa: E501
-            return data
+            return self.datasets_create_version_with_http_info(
+                owner_slug, dataset_slug, dataset_new_version_request, **kwargs
+            )
 
     def datasets_create_version_with_http_info(self, owner_slug, dataset_slug, dataset_new_version_request, **kwargs):  # noqa: E501
         """Create a new dataset version  # noqa: E501

@@ -24,7 +24,7 @@ import unittest
 
 class TestAuthenticate(unittest.TestCase):
     def setUp(self):
-        print("setup             class:%s" % self)
+        print(f"setup             class:{self}")
 
     def tearDown(self):
         print("teardown          class:TestStuff")
