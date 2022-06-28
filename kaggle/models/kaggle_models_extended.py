@@ -136,8 +136,7 @@ class DatasetNewResponse(object):
 class ListFilesResult(object):
     def __init__(self, init_dict):
         self.error_message = init_dict['errorMessage']
-        files = init_dict['datasetFiles']
-        if files:
+        if files := init_dict['datasetFiles']:
             self.files = [File(f) for f in files]
         else:
             self.files = {}
@@ -171,8 +170,7 @@ def parse(string):
     ]
     for t in time_formats:
         try:
-            result = datetime.strptime(string[:26], t).replace(microsecond=0)
-            return result
+            return datetime.strptime(string[:26], t).replace(microsecond=0)
         except:
             pass
     return string
